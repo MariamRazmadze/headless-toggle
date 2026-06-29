@@ -17,7 +17,7 @@ export default function Toggle({ children }: { children: React.ReactNode }) {
   };
   return (
     <ToggleContext.Provider value={{ on, toggle }}>
-      <div>{children}</div>;
+      <div>{children}</div>
     </ToggleContext.Provider>
   );
 }
