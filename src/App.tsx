@@ -9,8 +9,10 @@ export default function App() {
   const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
   return (
     <div>
-      <Star />
-      <Menu>
+      <Star onChange={() => console.log("toggled from App")} />
+      <br />
+      <br />
+      <Menu onOpen={() => console.log("Toggled from Menu")}>
         <MenuButton>Menu</MenuButton>
         <MenuDropdown>
           {sports.map((sport) => (
