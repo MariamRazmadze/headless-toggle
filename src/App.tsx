@@ -9,7 +9,7 @@ export default function App() {
   const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
   return (
     <div>
-      <Star onChange={() => console.log("toggled from App")} />
+      <Star />
       <br />
       <br />
       <Menu onOpen={() => console.log("Toggled from Menu")}>

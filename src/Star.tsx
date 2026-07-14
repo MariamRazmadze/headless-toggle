@@ -5,10 +5,10 @@ import ToggleButton from "./Toggle/ToggleButton";
 import ToggleOff from "./Toggle/ToggleOff";
 import ToggleOn from "./Toggle/ToggleOn";
 
-export default function Star({ onChange }: { onChange: () => void }) {
+export default function Star({ onToggle }: { onToggle?: () => void }) {
   return (
     <div>
-      <Toggle onToggle={onChange}>
+      <Toggle onToggle={onToggle}>
         <ToggleButton>
           <ToggleOn>
             <BsStarFill className="star filled" />
