@@ -4,11 +4,15 @@ import MenuDropdown from "./menu/MenuDropdown";
 import MenuItem from "./menu/MenuItem";
 import Menu from "./menu/Menu";
 import Star from "./Star";
+import Box from "./Box";
 
 export default function App() {
   const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
   return (
     <div>
+      <Box />
+      <br />
+      <br />
       <Star />
       <br />
       <br />
