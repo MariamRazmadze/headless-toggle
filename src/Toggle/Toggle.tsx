@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
+import useEffectOnUpdate from "../hooks/useEffectOnUpdate";
+import useToggle from "../hooks/useToggle";
 
 type ToggleContextType = {
   on: boolean;
@@ -16,18 +18,9 @@ type ToggleProps = {
 };
 
 export default function Toggle({ children, onToggle = () => {} }: ToggleProps) {
-  const firstRender = useRef(true);
-  const [on, setOn] = useState(false);
-  const toggle = () => {
-    setOn((prevOn) => !prevOn);
-  };
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-    } else {
-      onToggle();
-    }
-  }, [on]);
+  const [on, toggle] = useToggle();
+
+  useEffectOnUpdate(onToggle, [on]);
   return (
     <ToggleContext.Provider value={{ on, toggle }}>
       <div>{children}</div>

@@ -6,7 +6,7 @@ import ToggleDisplay from "./Toggle/ToggleDisplay";
 export default function Box() {
   return (
     <div>
-      <Toggle>
+      <Toggle onToggle={() => console.log("hook effect")}>
         <ToggleButton>
           <ToggleDisplay>
             {(on) => <div className={`box ${on ? "filled" : ""}`}></div>}
